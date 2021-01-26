@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
         GameObject obstacles = Instantiate(Obstacle, positions, Quaternion.identity);
     }
 
-   // public void generate5Obsta
-
     public void addAI()
     {
         
