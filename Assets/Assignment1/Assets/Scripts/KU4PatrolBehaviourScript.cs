@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class KU4PatrolBehaviourScript : MonoBehaviour
 {
-    [SerializeField] GameObject AI;
-    [SerializeField] List<Transform> waypoints;
+    [SerializeField] Vector3[] waypoints;
 
+    private int counter;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(moveToWaypoint());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void moveToWaypoint()
+    IEnumerator moveToWaypoint()
     {
-
+        while (true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[counter], 1f);
+            yield return new WaitForSeconds(1f);
+            if (transform.position == waypoints[counter])
+            {
+                counter++;
+                if (counter >= waypoints.Length)
+                {
+                    counter = 0;
+                }
+            }
+        }
     }
 }

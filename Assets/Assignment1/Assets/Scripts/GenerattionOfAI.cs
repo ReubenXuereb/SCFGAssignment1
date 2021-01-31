@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+//TASK 2 2nd bullet
+//A * pathfinding pro has a feature called Local Avoidance. It is a feature were it handles agents at different floors/layers to not collide with each other
+
+
+
+
 public class GenerattionOfAI : MonoBehaviour
 {
 
@@ -16,11 +25,6 @@ public class GenerattionOfAI : MonoBehaviour
         generateTenAI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public Vector3 randomGenerator()
     {
